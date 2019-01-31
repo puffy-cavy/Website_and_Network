@@ -1,0 +1,9 @@
+ftp
+ssh
+https
+netassistant
+dhcps
+kerberos-sec
+ntp
+netbios-ns
+netbios-dgm

